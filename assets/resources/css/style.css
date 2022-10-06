@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+*{
+    box-sizing: border-box;
+}
+ body{
+    min-height: 100vh;
+    margin:  0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(240, 40%, 5%);
+ }
+ .box{
+    width: 320px;
+    padding: 30px;
+    background-color: hsl(240, 27%, 10%);
+
+ }
+ .form-switcher{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .form-switcher + .form-switcher{
+    margin-top: 30px;
+ }
+ .form-switch-input{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+ }
+ .form-switcher-text{
+    color: hsl(0, 0%, 100%);
+    text-transform: capitalize;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.5s ease;
+ }
+ .form-switch-input:checked ~ .form-switcher-text{
+    color: hsl(0, 83%, 64%);
+ }
+  .form-switch-input:disabled ~ .form-switcher-text{
+    opacity: 0.5;
+    pointer-events: none;
+ }
+ .form-switcher-slider{
+    height: 30px;
+    width: 50px;
+    border: 1px solid hsl(0, 0%, 100%);
+    position: relative;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+ }
+  .form-switch-input:checked ~ .form-switcher-slider{
+    background-color: hsl(0, 83%, 64%);
+    border-color: hsl(0, 83%, 64%);
+  }
+   .form-switch-input:disabled ~ .form-switcher-slider{
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+ .form-switcher-slider::before{
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    height: 18px;
+    width: 18px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+ }
+    .form-switch-input:checked ~ .form-switcher-slider::before{
+     transform: translateX(calc(100% + 2px));
+  }
+
